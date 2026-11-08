@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybelle Martins | Desenvolvedora Backend Java</title>
+  <meta name="description" content="Portfólio de Cybelle Martins dos Santos, estudante de Sistemas de Informação na UFPB, com foco em Java, Spring Boot e desenvolvimento Backend rumo a Full Stack.">
+  <meta name="theme-color" content="#0b0c14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="progresso" id="progresso"></div>
+  <div class="fundo" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+    <span class="grade"></span>
+  </div>
+  <div class="luz-cursor" id="luz" aria-hidden="true"></div>
+
+  <!-- ================= MENU ================= -->
+  <header class="topo">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a href="#inicio" class="logo" aria-label="Início">
+        <span class="logo-marca">CM</span><span class="logo-nome">Cybelle<b>.</b></span>
+      </a>
+
+      <ul class="menu" id="menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#tecnologias">Tecnologias</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#pesquisa">Pesquisa</a></li>
+        <li><a href="#aprendizado">Aprendizado</a></li>
+        <li><a href="#contato" class="menu-cta">Contato</a></li>
+      </ul>
+
+      <div class="acoes">
+        <button class="btn-icone" id="btn-tema" aria-label="Alternar tema claro/escuro">☾</button>
+        <button class="btn-icone btn-hamburguer" id="btn-menu" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero container" id="inicio">
+      <div class="hero-texto">
+        <span class="selo"><i class="ponto"></i> Aberta a oportunidades de estágio</span>
+        <h1>Olá, sou<br><span class="grad">Cybelle Martins</span></h1>
+        <p class="hero-cargo">Transformando aprendizado em soluções reais.</p>
+        <p class="hero-desc">
+          Estudante de Sistemas de Informação · UFPB. Desenvolvedora em formação, com foco em
+          <strong>Backend Java</strong>, construção de sistemas e evolução contínua no desenvolvimento de software.
+        </p>
+        <div class="hero-botoes">
+          <a href="#projetos" class="btn btn-primario">Ver projetos <span aria-hidden="true">→</span></a>
+          <a href="#contato" class="btn btn-vidro">Entrar em contato</a>
+        </div>
+        <ul class="hero-chips">
+          <li>Java</li><li>Spring Boot</li><li>PostgreSQL</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual">
+        <div class="janela codigo">
+          <div class="janela-topo"><i></i><i></i><i></i><span>Cybelle.java</span></div>
+<pre><code><span class="c">// quem eu sou, em código</span>
+<span class="k">public record</span> <span class="t">Desenvolvedora</span>(
+    <span class="t">String</span> nome,
+    <span class="t">String</span> curso,
+    <span class="t">List&lt;String&gt;</span> stack
+) {}
+
+<span class="t">Desenvolvedora</span> eu = <span class="k">new</span> <span class="t">Desenvolvedora</span>(
+    <span class="s">"Cybelle Martins"</span>,
+    <span class="s">"Sistemas de Informação · UFPB"</span>,
+    <span class="t">List</span>.of(<span class="s">"Java"</span>, <span class="s">"Spring Boot"</span>,
+            <span class="s">"PostgreSQL"</span>, <span class="s">"JWT"</span>)
+);
+
+<span class="c">// próximo commit: Full Stack ⚡</span></code></pre>
+        </div>
+        <div class="flutuante f1"><b>3</b> projetos<br><small>backend + web</small></div>
+        <div class="flutuante f2"><b>4º</b> período<br><small>UFPB · Rio Tinto</small></div>
+      </div>
+
+      <a href="#sobre" class="rolar" aria-label="Rolar para baixo"><span></span></a>
+    </section>
+
+    <!-- ================= SOBRE ================= -->
+    <section class="secao container reveal" id="sobre">
+      <header class="cab-secao">
+        <h2>Sobre mim</h2>
+      </header>
+
+      <div class="sobre-grid">
+        <div class="sobre-texto">
+          <p class="lead">
+            Sou estudante de Sistemas de Informação na <strong>Universidade Federal da Paraíba (UFPB)</strong>,
+            apaixonada por tecnologia e pelo processo de transformar ideias em soluções que fazem a diferença.
+          </p>
+          <p>
+            Meu principal interesse está no <strong>desenvolvimento Backend com Java</strong>, área em que venho
+            aprofundando meus conhecimentos por meio da construção de APIs, sistemas de gestão e aplicações que
+            envolvem regras de negócio, segurança e persistência de dados.
+          </p>
+          <p>
+            Acredito que aprender programação vai muito além de escrever código. Gosto de compreender como os
+            sistemas funcionam, investigar problemas e encontrar soluções que sejam organizadas, seguras e eficientes.
+          </p>
+          <p>
+            Atualmente, desenvolvo projetos voltados à gestão de serviços de saúde, organização acadêmica e
+            administração comercial. Paralelamente, estou ampliando meus conhecimentos em JavaScript e tecnologias
+            Frontend, buscando evoluir para o desenvolvimento Full Stack.
+          </p>
+          <p>
+            Também atuo como <strong>Diretora de Pesquisa da SLOTH</strong>, liga acadêmica dedicada à ética em
+            Engenharia de Software, onde exploro temas como privacidade, proteção de dados e desenvolvimento responsável.
+          </p>
+          <p>
+            Estou em constante aprendizado e busco oportunidades para colocar meus conhecimentos em prática,
+            colaborar com outros desenvolvedores e crescer profissionalmente na área de tecnologia.
+          </p>
+        </div>
+
+        <aside class="ficha vidro">
+          <div class="avatar" aria-label="Espaço para sua foto">
+            <!-- Para usar sua foto: <img src="foto.jpg" alt="Foto de Cybelle Martins"> -->
+            <span>CM</span>
+          </div>
+          <dl>
+            <div><dt>Nome</dt><dd>Cybelle Martins dos Santos</dd></div>
+            <div><dt>Formação</dt><dd>Bacharelado em Sistemas de Informação</dd></div>
+            <div><dt>Instituição</dt><dd>UFPB · Campus IV, Rio Tinto/PB</dd></div>
+            <div><dt>Período</dt><dd>4º período</dd></div>
+            <div><dt>Foco atual</dt><dd>Backend, evoluindo para Full Stack</dd></div>
+            <div><dt>Objetivo</dt><dd>Estágio e desenvolvimento profissional em tecnologia</dd></div>
+          </dl>
+        </aside>
+      </div>
+
+      <div class="numeros">
+        <div class="numero vidro"><b data-count="3">0</b><span>projetos em destaque</span></div>
+        <div class="numero vidro"><b data-count="30" data-sufixo="+">0</b><span>tecnologias e ferramentas</span></div>
+        <div class="numero vidro"><b data-count="4" data-sufixo="º">0</b><span>período de graduação</span></div>      </div>
+    </section>
+
+    <!-- ================= TECNOLOGIAS ================= -->
+    <section class="secao container reveal" id="tecnologias">
+      <header class="cab-secao">
+        <h2>Tecnologias</h2>
+      </header>
+      <p class="intro">O que já uso nos projetos e o que ainda estou aprendendo, separados com transparência.</p>
+
+      <div class="legenda">
+        <span><i class="dot uso"></i> Uso na prática</span>
+        <span><i class="dot estudo"></i> Em estudo / próxima etapa</span>
+      </div>
+
+      <div class="abas" role="tablist" aria-label="Categorias de tecnologias">
+        <button role="tab" class="aba ativa" data-aba="backend" aria-selected="true">Backend</button>
+        <button role="tab" class="aba" data-aba="frontend" aria-selected="false">Frontend</button>
+        <button role="tab" class="aba" data-aba="dados" aria-selected="false">Banco de dados</button>
+        <button role="tab" class="aba" data-aba="ferramentas" aria-selected="false">Ferramentas</button>
+        <button role="tab" class="aba" data-aba="testes" aria-selected="false">Testes e segurança</button>
+      </div>
+
+      <div class="paineis">
+        <div class="painel ativo" data-painel="backend">
+          <div class="tech destaque"><b>Java</b><small>Foco principal</small><i class="dot uso"></i></div>
+          <div class="tech destaque"><b>Spring Boot</b><small>Foco principal</small><i class="dot uso"></i></div>
+          <div class="tech"><b>Javalin</b><small>Framework web leve</small><i class="dot uso"></i></div>
+          <div class="tech"><b>APIs REST</b><small>Design e consumo</small><i class="dot uso"></i></div>
+        </div>
+
+        <div class="painel" data-painel="frontend">
+          <div class="tech"><b>HTML5</b><small>Estrutura semântica</small><i class="dot uso"></i></div>
+          <div class="tech"><b>CSS3</b><small>Layout responsivo</small><i class="dot uso"></i></div>
+          <div class="tech"><b>JavaScript</b><small>Fundamentos e DOM</small><i class="dot uso"></i></div>
+          <div class="tech"><b>Bootstrap</b><small>Componentes e grid</small><i class="dot uso"></i></div>
+          <div class="tech"><b>Thymeleaf</b><small>Templates no servidor</small><i class="dot uso"></i></div>
+          <div class="tech"><b>TypeScript</b><small>Próxima etapa</small><i class="dot estudo"></i></div>
+          <div class="tech"><b>React</b><small>Próxima etapa</small><i class="dot estudo"></i></div>
+        </div>
+
+        <div class="painel" data-painel="dados">
+          <div class="tech destaque"><b>PostgreSQL</b><small>Banco principal</small><i class="dot uso"></i></div>
+          <div class="tech"><b>SQL</b><small>Consultas e modelagem</small><i class="dot uso"></i></div>
+          <div class="tech"><b>JDBC</b><small>Acesso direto</small><i class="dot uso"></i></div>
+          <div class="tech"><b>Spring Data JPA</b><small>Repositórios</small><i class="dot uso"></i></div>
+          <div class="tech"><b>Hibernate</b><small>ORM</small><i class="dot uso"></i></div>
+          <div class="tech"><b>Flyway</b><small>Migrações</small><i class="dot uso"></i></div>
+        </div>
+
+        <div class="painel" data-painel="ferramentas">
+          <div class="tech"><b>Git</b><small>Versionamento</small><i class="dot uso"></i></div>
+          <div class="tech"><b>GitHub</b><small>Repositórios</small><i class="dot uso"></i></div>
+          <div class="tech"><b>Docker</b><small>Contêineres</small><i class="dot uso"></i></div>
+          <div class="tech"><b>Maven</b><small>Build e dependências</small><i class="dot uso"></i></div>
+          <div class="tech"><b>Postman</b><small>Testes de API</small><i class="dot uso"></i></div>
+          <div class="tech"><b>IntelliJ IDEA</b><small>IDE Java</small><i class="dot uso"></i></div>
+          <div class="tech"><b>VS Code</b><small>Editor</small><i class="dot uso"></i></div>
+          <div class="tech"><b>GitHub Actions</b><small>CI/CD</small><i class="dot uso"></i></div>
+        </div>
+
+        <div class="painel" data-painel="testes">
+          <div class="tech"><b>JUnit 5</b><small>Testes unitários</small><i class="dot uso"></i></div>
+          <div class="tech"><b>Mockito</b><small>Mocks</small><i class="dot uso"></i></div>
+          <div class="tech"><b>MockMvc</b><small>Testes de controller</small><i class="dot uso"></i></div>
+          <div class="tech"><b>JWT</b><small>Autenticação</small><i class="dot uso"></i></div>
+          <div class="tech"><b>Spring Security</b><small>Autorização</small><i class="dot uso"></i></div>
+          <div class="tech"><b>BCrypt</b><small>Hash de senhas</small><i class="dot uso"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJETOS ================= -->
+    <section class="secao container reveal" id="projetos">
+      <header class="cab-secao">
+        <h2>Projetos</h2>
+      </header>
+      <p class="intro">Projetos em evolução, apresentados com o que já existe e o que está planejado.</p>
+
+      <div class="projetos">
+
+        <!-- PASTELARIA E PEIXARIA -->
+        <article class="projeto vidro largo sem-mock" data-tilt>
+          <div class="projeto-corpo">
+            <div class="projeto-topo">
+              <span class="status">Em desenvolvimento</span>
+              <span class="area">Comércio · Pedidos online</span>
+            </div>
+            <h3>Gestão de Pastelaria e Peixaria</h3>
+            <p>
+              Solução para digitalizar e organizar processos comerciais, integrando gestão administrativa e
+              atendimento ao cliente, com mais controle sobre pedidos, produtos, pagamentos e operações internas.
+            </p>
+
+            <div class="duas-col">
+              <ul class="lista">
+                <li><b>Produtos:</b> cadastro, preços e disponibilidade</li>
+                <li><b>Pedidos online:</b> cardápio digital, carrinho e acompanhamento</li>
+                <li><b>Financeiro:</b> caixa, despesas, pagamentos e relatórios</li>
+              </ul>
+              <ul class="lista">
+                <li><b>Pagamentos:</b> Pix e dinheiro</li>
+                <li><b>Estoque:</b> identifica produtos ou sabores esgotados</li>
+                <li><b>Área administrativa</b> das operações</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <div><small>Backend</small><ul class="chips"><li>Java</li><li>Spring Boot</li><li>Spring Security</li></ul></div>
+              <div><small>Dados</small><ul class="chips"><li>PostgreSQL</li><li>JPA</li><li>Hibernate</li><li>Flyway</li></ul></div>
+              <div><small>Frontend planejado</small><ul class="chips planejado"><li>React</li><li>JavaScript</li><li>CSS</li><li>Vite</li></ul></div>
+              <div><small>Planejado</small><ul class="chips planejado"><li>Docker Compose</li><li>JUnit</li><li>Mockito</li></ul></div>
+            </div>
+          </div>
+          <div class="projeto-mock mock-loja" aria-hidden="true">
+            <div class="janela-topo"><i></i><i></i><i></i><span>pastelaria-peixaria / cardápio</span></div>
+            <div class="loja">
+              <div class="item"><i class="foto"></i><b></b><s></s><em>Pix</em></div>
+              <div class="item"><i class="foto f2"></i><b></b><s></s><em>Dinheiro</em></div>
+              <div class="item esgotado"><i class="foto f3"></i><b></b><s></s><em>Esgotado</em></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- EDUPLANNER -->
+        <article class="projeto vidro largo sem-mock" data-tilt>
+          <div class="projeto-corpo">
+            <div class="projeto-topo">
+              <span class="status ok">Projeto acadêmico</span>
+              <span class="area">Educação</span>
+            </div>
+            <h3>EDUPlanner</h3>
+            <p>Planejamento e organização de atividades estudantis, reunindo disciplinas, tarefas e eventos em um único lugar.</p>
+            <ul class="chips">
+              <li>Java</li><li>Javalin</li><li>Thymeleaf</li><li>PostgreSQL</li><li>JDBC</li><li>Docker</li><li>JWT</li><li>JUnit</li><li>Mockito</li>
+            </ul>
+          </div>
+          <div class="projeto-foto">
+            <img src="eduplanner.webp" alt="Telas do EduPlanner: login e painel com agenda, tarefas e anotações" loading="lazy">
+          </div>
+        </article>
+
+        <!-- VITALLIS -->
+        <article class="projeto vidro largo sem-mock" data-tilt>
+          <div class="projeto-corpo">
+            <div class="projeto-topo">
+              <span class="status">Em desenvolvimento</span>
+              <span class="area">SaaS · Saúde</span>
+            </div>
+            <h3>Vitallis</h3>
+            <p>
+              Sistema de gestão para profissionais autônomos da saúde, que reúne pacientes, agenda e
+              pagamentos em um só lugar. Cada profissional enxerga apenas os próprios dados, e as regras
+              financeiras são tratadas com o cuidado de quem lida com dinheiro de verdade.
+            </p>
+
+            <div class="blocos-projeto">
+              <div>
+                <h4>O que já existe</h4>
+                <p>API em Java com cadastro de pacientes, agendamentos, cobranças e pagamentos, pacotes de sessões com créditos e acesso separado por profissional (multi-tenant), protegido por login com JWT.</p>
+              </div>
+              <div>
+                <h4>O que estou fazendo agora</h4>
+                <p>O módulo financeiro: resumo e histórico de cada paciente. Defini regras como “dívida e crédito nunca se compensam” e “cancelar uma consulta parcialmente paga tira o restante da dívida”.</p>
+              </div>
+              <div>
+                <h4>Como garanto a qualidade</h4>
+                <p>Mais de 300 testes automatizados e travas contra operações simultâneas, validadas quebrando a regra de propósito para confirmar que os testes realmente falham.</p>
+              </div>
+            </div>
+
+            <div class="stack">
+              <div><small>Em uso</small><ul class="chips"><li>Java</li><li>Spring Boot</li><li>PostgreSQL</li><li>Spring Security</li><li>JWT</li><li>JPA</li><li>Flyway</li><li>Docker</li><li>JUnit</li></ul></div>
+              <div><small>Próximo passo</small><ul class="chips planejado"><li>Interface web com React</li></ul></div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ================= PESQUISA ================= -->
+    <section class="secao container reveal" id="pesquisa">
+      <header class="cab-secao">
+        <h2>Pesquisa e ética</h2>
+      </header>
+
+      <div class="pesquisa vidro">
+        <div class="pesquisa-topo">
+          <div>
+            <span class="status ok">Experiência acadêmica</span>
+            <h3>Diretora de Pesquisa · SLOTH</h3>
+            <p class="liga">Liga Acadêmica de Ética em Engenharia de Software · UFPB</p>
+          </div>
+          <div class="periodo"><small>Período</small><b>Out/2026 → Out/2027</b></div>
+        </div>
+
+        <ul class="atividades">
+          <li><i>01</i>Organização e desenvolvimento de atividades de pesquisa acadêmica</li>
+          <li><i>02</i>Estudos sobre ética e responsabilidade na Engenharia de Software</li>
+          <li><i>03</i>Investigação sobre privacidade, proteção de dados e LGPD</li>
+          <li><i>04</i>Discussões sobre IA, segurança e desenvolvimento responsável</li>
+          <li><i>05</i>Organização de seminários e análise de artigos científicos</li>
+        </ul>
+
+        <blockquote class="tema">
+          <small>Tema de pesquisa atual</small>
+          “Privacidade desde o início: ética e LGPD no desenvolvimento de software.”
+        </blockquote>
+      </div>
+
+      <h3 class="sub">Base acadêmica</h3>
+      <div class="academico">
+        <div class="vidro"><h4>Programação</h4><p>Lógica, algoritmos e orientação a objetos</p></div>
+        <div class="vidro"><h4>Estruturas de Dados</h4><p>Árvores binárias, Heap, Skip List e Árvore B</p></div>
+        <div class="vidro"><h4>Engenharia de Software</h4><p>Requisitos, modelagem e boas práticas</p></div>
+        <div class="vidro"><h4>Análise e Projeto</h4><p>Planejamento e estruturação de sistemas</p></div>
+        <div class="vidro"><h4>Banco de Dados</h4><p>Modelagem relacional e consultas SQL</p></div>
+        <div class="vidro"><h4>Segurança</h4><p>Autenticação, autorização e proteção de dados</p></div>
+        <div class="vidro"><h4>Empreendedorismo</h4><p>Modelos de negócio e soluções</p></div>
+        <div class="vidro"><h4>Estudos complementares</h4><p>Sensoriamento Inteligente para Indústria</p></div>
+      </div>
+    </section>
+
+    <!-- ================= APRENDIZADO ================= -->
+    <section class="secao container reveal" id="aprendizado">
+      <header class="cab-secao">
+        <h2>Aprendizado atual</h2>
+      </header>
+      <p class="intro">Evolução contínua: o que estou aperfeiçoando agora e o que vem a seguir.</p>
+
+      <ol class="trilha">
+        <li class="agora">
+          <span class="etapa">Agora</span>
+          <h4>JavaScript</h4>
+          <p>Fundamentos, funções, manipulação do DOM, orientação a objetos e ecossistema.</p>
+        </li>
+        <li class="agora">
+          <span class="etapa">Agora</span>
+          <h4>Arquitetura e segurança</h4>
+          <p>Boas práticas aplicadas nos projetos.</p>
+        </li>
+        <li class="agora">
+          <span class="etapa">Agora</span>
+          <h4>Git e GitHub</h4>
+          <p>Organização, versionamento e apresentação profissional dos repositórios.</p>
+        </li>
+        <li>
+          <span class="etapa">Próximo</span>
+          <h4>TypeScript</h4>
+          <p>Próxima etapa de aprofundamento.</p>
+        </li>
+        <li>
+          <span class="etapa">Próximo</span>
+          <h4>React</h4>
+          <p>Desenvolvimento de interfaces.</p>
+        </li>
+        <li>
+          <span class="etapa">Objetivo</span>
+          <h4>Full Stack</h4>
+          <p>Integração completa entre frontend e backend.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ================= CONTATO ================= -->
+    <section class="secao container reveal" id="contato">
+      <div class="contato vidro">
+        <h2>Vamos conversar?</h2>
+        <p>
+          Estou em busca de oportunidades de estágio e de desenvolvimento profissional em tecnologia.
+          Se meu perfil faz sentido para o seu time, adoraria saber mais.
+        </p>
+
+        <div class="contato-botoes">
+          <a class="btn btn-primario" id="link-email" href="mailto:cybellemartins11@gmail.com">Enviar e-mail</a>
+          <button class="btn btn-vidro" id="copiar-email" data-email="cybellemartins11@gmail.com" type="button">Copiar e-mail</button>
+          <a class="btn btn-vidro" href="https://github.com/cybellesantos-byte" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn btn-vidro" href="https://www.linkedin.com/in/cybelle-martins-417519398/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape container">
+    <p>© <span id="ano"></span> Cybelle Martins dos Santos · Feito à mão com HTML, CSS e JavaScript</p>
+    <a href="#inicio">Voltar ao topo ↑</a>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
