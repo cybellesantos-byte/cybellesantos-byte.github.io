@@ -227,6 +227,10 @@
 
       <div class="projetos">
 
+        <!-- MODELO DOS CARTÕES (igual em todos os projetos):
+             selo e área → título → resumo → 3 blocos (O que faz · Como foi feito · Qualidade e entrega)
+             → tecnologias em 4 grupos → faixa de links no fim -->
+
         <!-- GALO & CIA -->
         <article class="projeto vidro largo sem-mock" data-tilt>
           <div class="projeto-corpo">
@@ -236,30 +240,37 @@
             </div>
             <h3>Galo &amp; Cia · gestão de pastelaria e peixaria</h3>
             <p>
-              Nasceu na pastelaria da minha família, para tirar o controle do caderno. Hoje o sistema está
-              <strong>no ar e em uso no dia a dia</strong>, cuidando da pastelaria e da peixaria no mesmo lugar,
-              com um cardápio aberto ao público para o cliente fazer o pedido.
+              Nasceu na pastelaria da minha família, para tirar o controle do caderno. Hoje está
+              <strong>no ar e em uso no dia a dia</strong>, cuidando da pastelaria e da peixaria.
             </p>
-
-            <div class="projeto-acoes">
-              <a class="btn btn-primario" href="https://cybellesantos-byte.github.io/galo-e-cia-demo/" target="_blank" rel="noopener">Testar a demonstração ↗</a>
-              <a class="btn btn-vidro" href="https://cybellesantos-byte.github.io/galo-e-cia-demo/cardapio.html" target="_blank" rel="noopener">Ver o cardápio do cliente ↗</a>
-              <a class="btn btn-vidro" href="https://github.com/cybellesantos-byte/galo-e-cia" target="_blank" rel="noopener">Ver o código ↗</a>
-            </div>
-            <p class="nota-demo">A demonstração usa dados inventados, e nada nela é salvo. O sistema real exige login e guarda os dados da família.</p>
 
             <div class="blocos-projeto">
               <div>
-                <h4>Painel interno · com login</h4>
-                <p>Caixa do dia, vendas, despesas, repasses ao entregador e relatórios. Funciona no computador e no celular, com perfis de administradora e de equipe.</p>
+                <h4>O que faz</h4>
+                <ul class="lista">
+                  <li>Caixa do dia, vendas e despesas</li>
+                  <li>Repasses ao entregador</li>
+                  <li>Relatórios por período</li>
+                  <li>Cardápio para o cliente pedir pelo WhatsApp</li>
+                </ul>
               </div>
               <div>
-                <h4>Cardápio público · sem login</h4>
-                <p>O cliente vê o que tem hoje, escolhe os itens, retirada ou entrega e a forma de pagamento, e envia o pedido já escrito pelo WhatsApp.</p>
+                <h4>Como foi feito</h4>
+                <ul class="lista">
+                  <li>API em Java com Spring Boot e PostgreSQL</li>
+                  <li>Painel com login, para administradora e equipe</li>
+                  <li>Cardápio público, sem login e só leitura</li>
+                  <li>Interface em JavaScript puro, no computador e no celular</li>
+                </ul>
               </div>
               <div>
                 <h4>Qualidade e entrega</h4>
-                <p>272 testes automatizados, com integração contra um PostgreSQL de verdade. Empacotado com Docker e publicado na nuvem.</p>
+                <ul class="lista">
+                  <li>272 testes automatizados</li>
+                  <li>Integração com PostgreSQL de verdade</li>
+                  <li>Empacotado com Docker</li>
+                  <li>Publicado na nuvem</li>
+                </ul>
               </div>
             </div>
 
@@ -269,6 +280,13 @@
               <div><small>Frontend</small><ul class="chips"><li>HTML</li><li>CSS</li><li>Bootstrap</li><li>JavaScript</li></ul></div>
               <div><small>Testes e entrega</small><ul class="chips"><li>JUnit</li><li>Mockito</li><li>Testcontainers</li><li>Docker</li></ul></div>
             </div>
+
+            <div class="projeto-acoes">
+              <a class="btn btn-primario" href="https://cybellesantos-byte.github.io/galo-e-cia-demo/" target="_blank" rel="noopener">Testar a demonstração ↗</a>
+              <a class="btn btn-vidro" href="https://cybellesantos-byte.github.io/galo-e-cia-demo/cardapio.html" target="_blank" rel="noopener">Ver o cardápio do cliente ↗</a>
+              <a class="btn btn-vidro" href="https://github.com/cybellesantos-byte/galo-e-cia" target="_blank" rel="noopener">Ver o código ↗</a>
+            </div>
+            <p class="nota-demo">A demonstração usa dados inventados, e nada nela é salvo. O sistema real exige login e guarda os dados da família.</p>
           </div>
         </article>
 
@@ -276,14 +294,55 @@
         <article class="projeto vidro largo sem-mock" data-tilt>
           <div class="projeto-corpo">
             <div class="projeto-topo">
-              <span class="status ok">Projeto acadêmico</span>
+              <span class="status ok">Projeto acadêmico · em equipe</span>
               <span class="area">Educação</span>
             </div>
-            <h3>EDUPlanner</h3>
-            <p>Planejamento e organização de atividades estudantis, reunindo disciplinas, tarefas e eventos em um único lugar.</p>
-            <ul class="chips">
-              <li>Java</li><li>Javalin</li><li>Thymeleaf</li><li>PostgreSQL</li><li>JDBC</li><li>Docker</li><li>JWT</li><li>JUnit</li><li>Mockito</li>
-            </ul>
+            <h3>EDUPlanner · organizador de estudos</h3>
+            <p>
+              Planejamento e organização de atividades estudantis, reunindo disciplinas, tarefas e eventos
+              em um único lugar.
+            </p>
+
+            <div class="blocos-projeto">
+              <div>
+                <h4>O que faz</h4>
+                <ul class="lista">
+                  <li>Disciplinas e tarefas</li>
+                  <li>Eventos e agenda</li>
+                  <li>Anotações</li>
+                  <li>Painel (dashboard) com o resumo</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Como foi feito</h4>
+                <ul class="lista">
+                  <li>Backend em Java com Javalin</li>
+                  <li>Páginas em Thymeleaf</li>
+                  <li>Banco acessado direto por JDBC, com pool HikariCP</li>
+                  <li>Login com JWT e senhas protegidas com BCrypt</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Qualidade e entrega</h4>
+                <ul class="lista">
+                  <li>Testes com JUnit e Mockito</li>
+                  <li>Testes HTTP de integração</li>
+                  <li>Pipeline no GitHub Actions</li>
+                  <li>Empacotado com Docker</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="stack">
+              <div><small>Backend</small><ul class="chips"><li>Java 25</li><li>Javalin</li><li>JWT</li><li>BCrypt</li></ul></div>
+              <div><small>Dados</small><ul class="chips"><li>PostgreSQL</li><li>JDBC</li><li>HikariCP</li></ul></div>
+              <div><small>Frontend</small><ul class="chips"><li>Thymeleaf</li></ul></div>
+              <div><small>Testes e entrega</small><ul class="chips"><li>JUnit</li><li>Mockito</li><li>GitHub Actions</li><li>Docker</li></ul></div>
+            </div>
+
+            <div class="projeto-acoes">
+              <span class="nota-privado">Código em repositório privado. Posso mostrar e explicar as decisões numa conversa.</span>
+            </div>
           </div>
           <div class="projeto-foto">
             <img src="eduplanner.webp" alt="Telas do EduPlanner: login e painel com agenda, tarefas e anotações" loading="lazy">
@@ -297,7 +356,7 @@
               <span class="status">Em desenvolvimento</span>
               <span class="area">SaaS · Saúde</span>
             </div>
-            <h3>Vitallis</h3>
+            <h3>Vitallis · gestão para profissionais da saúde</h3>
             <p>
               Sistema de gestão para profissionais autônomos da saúde, que reúne pacientes, agenda e
               pagamentos em um só lugar. Cada profissional enxerga apenas os próprios dados, e as regras
@@ -306,22 +365,43 @@
 
             <div class="blocos-projeto">
               <div>
-                <h4>O que já existe</h4>
-                <p>API em Java com cadastro de pacientes, agendamentos, cobranças e pagamentos, pacotes de sessões com créditos e acesso separado por profissional (multi-tenant), protegido por login com JWT.</p>
+                <h4>O que faz</h4>
+                <ul class="lista">
+                  <li>Cadastro de pacientes</li>
+                  <li>Agendamentos</li>
+                  <li>Cobranças e pagamentos</li>
+                  <li>Pacotes de sessões com créditos</li>
+                </ul>
               </div>
               <div>
-                <h4>O que estou fazendo agora</h4>
-                <p>O módulo financeiro: resumo e histórico de cada paciente. Defini regras como “dívida e crédito nunca se compensam” e “cancelar uma consulta parcialmente paga tira o restante da dívida”.</p>
+                <h4>Como foi feito</h4>
+                <ul class="lista">
+                  <li>API em Java com Spring Boot e PostgreSQL</li>
+                  <li>Acesso separado por profissional (multi-tenant)</li>
+                  <li>Login protegido com JWT</li>
+                  <li>Regras como “dívida e crédito nunca se compensam”</li>
+                </ul>
               </div>
               <div>
-                <h4>Como garanto a qualidade</h4>
-                <p>Mais de 300 testes automatizados e travas contra operações simultâneas, validadas quebrando a regra de propósito para confirmar que os testes realmente falham.</p>
+                <h4>Qualidade e entrega</h4>
+                <ul class="lista">
+                  <li>Mais de 300 testes automatizados</li>
+                  <li>Travas contra operações simultâneas</li>
+                  <li>Regras validadas quebrando a regra de propósito</li>
+                  <li>Empacotado com Docker</li>
+                </ul>
               </div>
             </div>
 
             <div class="stack">
-              <div><small>Em uso</small><ul class="chips"><li>Java</li><li>Spring Boot</li><li>PostgreSQL</li><li>Spring Security</li><li>JWT</li><li>JPA</li><li>Flyway</li><li>Docker</li><li>JUnit</li></ul></div>
-              <div><small>Próximo passo</small><ul class="chips planejado"><li>Interface web com React</li></ul></div>
+              <div><small>Backend</small><ul class="chips"><li>Java 25</li><li>Spring Boot</li><li>Spring Security</li><li>JWT</li></ul></div>
+              <div><small>Dados</small><ul class="chips"><li>PostgreSQL</li><li>JPA</li><li>Flyway</li></ul></div>
+              <div><small>Frontend</small><ul class="chips planejado"><li>React (próximo passo)</li></ul></div>
+              <div><small>Testes e entrega</small><ul class="chips"><li>JUnit</li><li>Mockito</li><li>Testcontainers</li><li>Docker</li></ul></div>
+            </div>
+
+            <div class="projeto-acoes">
+              <span class="nota-privado"><strong>Agora:</strong> módulo financeiro, com resumo e histórico de cada paciente. Código em repositório privado.</span>
             </div>
           </div>
         </article>
