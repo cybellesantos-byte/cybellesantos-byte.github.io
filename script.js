@@ -46,7 +46,7 @@ btnMenu.addEventListener("click", () => {
 $$("a", menu).forEach((link) => link.addEventListener("click", fecharMenu));
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") fecharMenu(); });
 
-// ========== 3. BARRA DE PROGRESSO + LUZ DO CURSOR ==========
+// ========== 3. BARRA DE PROGRESSO ==========
 const barra = $("#progresso");
 function atualizarProgresso() {
   const total = document.documentElement.scrollHeight - window.innerHeight;
@@ -54,14 +54,6 @@ function atualizarProgresso() {
 }
 window.addEventListener("scroll", atualizarProgresso, { passive: true });
 atualizarProgresso();
-
-const luz = $("#luz");
-if (!reduzirMovimento && window.matchMedia("(pointer: fine)").matches) {
-  window.addEventListener("pointermove", (e) => {
-    luz.style.setProperty("--mx", `${e.clientX}px`);
-    luz.style.setProperty("--my", `${e.clientY}px`);
-  }, { passive: true });
-}
 
 // ========== 4. LINK ATIVO NO MENU ==========
 const linksMenu = $$(".menu a[href^='#']:not(.menu-cta)");

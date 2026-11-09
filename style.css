@@ -63,26 +63,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 :focus-visible { outline: 2px solid var(--c2); outline-offset: 3px; border-radius: 6px; }
 
-/* ========== FUNDO ANIMADO ========== */
+/* ========== FUNDO (fixo, sem animação) ========== */
 .fundo { position: fixed; inset: 0; z-index: -2; overflow: hidden; }
-
-.blob {
-  position: absolute;
-  width: 46vmax; height: 46vmax;
-  border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.32;
-  animation: flutuar 22s ease-in-out infinite alternate;
-}
-.b1 { background: var(--c1); top: -18vmax; left: -12vmax; }
-.b2 { background: var(--c2); bottom: -22vmax; right: -14vmax; animation-delay: -8s; opacity: 0.30; }
-.b3 { background: var(--c3); top: 40%; left: 45%; width: 28vmax; height: 28vmax; opacity: 0.20; animation-delay: -14s; }
-[data-tema="claro"] .blob { opacity: 0.18; }
-
-@keyframes flutuar {
-  from { transform: translate(0, 0) scale(1); }
-  to   { transform: translate(6vmax, 5vmax) scale(1.15); }
-}
 
 .grade {
   position: absolute; inset: 0;
@@ -93,12 +75,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
   mask-image: radial-gradient(ellipse at 50% 20%, #000 10%, transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse at 50% 20%, #000 10%, transparent 70%);
   opacity: 0.5;
-}
-
-.luz-cursor {
-  position: fixed; inset: 0; z-index: -1; pointer-events: none;
-  background: radial-gradient(500px circle at var(--mx, 50%) var(--my, 30%),
-    color-mix(in srgb, var(--c1) 14%, transparent), transparent 70%);
 }
 
 .progresso {
