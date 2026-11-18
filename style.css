@@ -633,3 +633,30 @@ button { font: inherit; color: inherit; cursor: pointer; }
   0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
   100% { opacity: 0; transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.2); }
 }
+
+
+/* =====================================================
+   CELULAR: mais compacto e legível
+   ===================================================== */
+@media (max-width: 700px) {
+  .hero-visual { display: none; }
+  .hero { padding-bottom: 40px; }
+  .hero-botoes .btn, .projeto-acoes .btn { width: 100%; justify-content: center; text-align: center; }
+  .projeto-acoes { flex-direction: column; align-items: stretch; }
+  .secao { padding-block: 30px; }
+  .secao::before { margin-bottom: 22px; }
+
+  .numeros { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .numero { padding: 16px 6px; }
+  .numero b { font-size: 1.6rem; }
+  .numero span { font-size: 0.74rem; }
+
+  .constelacao { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 28px; position: relative; }
+  .constelacao svg { min-width: 640px; }
+  .constelacao::after { content: "deslize para o lado →"; position: absolute; right: 14px; bottom: 6px; font-size: 0.72rem; color: var(--mudo); font-family: var(--mono); }
+
+  .academico { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .academico > div { padding: 14px; }
+  .academico h4 { font-size: 0.88rem; }
+  .academico p { font-size: 0.78rem; }
+}
