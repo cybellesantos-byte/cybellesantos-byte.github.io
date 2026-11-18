@@ -4,13 +4,13 @@
    ===================================================== */
 
 :root {
-  --c1: #8b7bff;            /* roxo */
-  --c2: #38d6c4;            /* turquesa */
-  --c3: #ff7ab8;            /* rosa */
+  --c1: #a78bfa;            /* lilás */
+  --c2: #22d3ee;            /* ciano */
+  --c3: #f472b6;            /* rosa */
   --grad: linear-gradient(120deg, var(--c1), var(--c2));
 
-  --fundo: #0b0c14;
-  --fundo-2: #11131d;
+  --fundo: #070d24;
+  --fundo-2: #0c1633;
   --vidro: rgba(255, 255, 255, 0.045);
   --vidro-borda: rgba(255, 255, 255, 0.09);
   --texto: #eef0f8;
@@ -512,4 +512,85 @@ button { font: inherit; color: inherit; cursor: pointer; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; }
+}
+
+
+/* =====================================================
+   TEMA CÉU ESTRELADO (combina com o perfil do GitHub)
+   ===================================================== */
+:root { --grad-nome: linear-gradient(120deg, #ffffff, #c4b5fd); }
+[data-tema="claro"] { --grad-nome: var(--grad); }
+
+.fundo { background: linear-gradient(160deg, #030712 0%, #0a1633 55%, #0f1f4d 100%); }
+.fundo::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 82% 28%, rgba(124, 58, 237, 0.26), transparent 52%),
+    radial-gradient(ellipse at 8% 88%, rgba(8, 145, 178, 0.22), transparent 52%);
+}
+:root:not([data-tema="claro"]) .grade { display: none; }
+[data-tema="claro"] .fundo { background: none; }
+[data-tema="claro"] .fundo::before, [data-tema="claro"] .estrelas, [data-tema="claro"] .cadente { display: none; }
+
+.estrelas { position: absolute; inset: 0; }
+.estrelas i { position: absolute; border-radius: 50%; opacity: 0.25; animation: cintila-estrela 4s ease-in-out infinite; }
+@keyframes cintila-estrela { 0%, 100% { opacity: 0.2; transform: scale(0.7); } 50% { opacity: 1; transform: scale(1.25); } }
+.cadente {
+  position: absolute; top: 9%; left: 52%; width: 100px; height: 2px; opacity: 0;
+  background: linear-gradient(90deg, transparent, #fff); transform: rotate(19deg);
+  animation: cai-estrela 10s ease-in infinite;
+}
+@keyframes cai-estrela {
+  0%, 80% { opacity: 0; transform: rotate(19deg) translateX(0); }
+  84% { opacity: 1; }
+  94%, 100% { opacity: 0; transform: rotate(19deg) translateX(300px); }
+}
+
+/* topo */
+.prompt { font-family: var(--mono); color: var(--c2); font-size: 1.05rem; margin-bottom: 8px; }
+.prompt .cursor { color: var(--c2); }
+.hero .grad { background: var(--grad-nome); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero h1 { margin-bottom: 8px; }
+.hero-cargo { font-size: clamp(1.6rem, 3.6vw, 2.4rem); font-weight: 300; color: #a5b4fc; margin-bottom: 24px; letter-spacing: 0.2px; }
+[data-tema="claro"] .hero-cargo { color: var(--c1); }
+
+/* títulos de seção, no estilo de terminal */
+.cab-secao h2 { font-family: var(--mono); font-weight: 700; font-size: clamp(1.5rem, 3.2vw, 2.1rem); text-transform: lowercase; letter-spacing: 0; }
+.cab-secao::before { content: "✦"; width: auto; height: auto; background: none; border-radius: 0; font-size: 1.5rem; color: var(--c2); }
+.cab-secao::after { height: 0; background: none; border-top: 1.5px dashed var(--vidro-borda); }
+#sobre .cab-secao::before { color: #facc15; }
+#tecnologias .cab-secao::before { color: #34d399; }
+#projetos .cab-secao::before { color: #22d3ee; }
+#pesquisa .cab-secao::before { color: #f472b6; }
+#aprendizado .cab-secao::before { color: #a78bfa; }
+
+/* constelação de tecnologias */
+.constelacao {
+  margin: 0 0 26px; padding: 8px; border-radius: var(--raio); overflow: hidden;
+  background: linear-gradient(160deg, #030712, #0a1633 60%, #0f1f4d); border: 1px solid var(--vidro-borda);
+}
+.constelacao svg { display: block; width: 100%; height: auto; }
+.cst-rot { font-family: var(--mono); font-size: 16px; fill: #e2e8f0; }
+.cst-zona { font-family: var(--fonte); font-size: 15px; font-weight: 700; letter-spacing: 1.5px; }
+.cst-linha line { stroke: #818cf8; stroke-width: 1.4; opacity: 0.7; }
+.cst-c, .cst-longe, .cst-chega, .cst-onda { transform-box: fill-box; transform-origin: center; }
+.cst-c { animation: cst-cintila 3.2s ease-in-out infinite; }
+.cst-d1 { animation-delay: 0.5s; } .cst-d2 { animation-delay: 1s; } .cst-d3 { animation-delay: 1.6s; } .cst-d4 { animation-delay: 2.2s; } .cst-d5 { animation-delay: 2.7s; }
+@keyframes cst-cintila { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.75; transform: scale(0.85); } }
+.cst-chega { animation: cst-chega 3.6s ease-in-out infinite; }
+@keyframes cst-chega { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-12px); } }
+.cst-ponte { stroke: #67e8f9; stroke-width: 1.4; stroke-dasharray: 4 6; animation: cst-corre 1.2s linear infinite; }
+@keyframes cst-corre { to { stroke-dashoffset: -20; } }
+.cst-onda { animation: cst-onda 2s ease-out infinite; }
+@keyframes cst-onda { from { opacity: 0.8; transform: scale(0.5); } to { opacity: 0; transform: scale(2.2); } }
+.cst-longe { animation: cst-longe 4s ease-in-out infinite; }
+@keyframes cst-longe { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.75; } }
+
+.lista-completa { margin-top: 8px; }
+.lista-completa summary { cursor: pointer; color: var(--c2); font-family: var(--mono); font-size: 0.9rem; padding: 10px 0; }
+.lista-completa[open] summary { margin-bottom: 14px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .estrelas i, .cadente, .cst-c, .cst-chega, .cst-ponte, .cst-onda, .cst-longe { animation: none; }
+  .estrelas i { opacity: 0.6; }
 }

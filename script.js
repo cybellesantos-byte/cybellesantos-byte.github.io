@@ -152,3 +152,28 @@ $("#copiar-email").addEventListener("click", async (e) => {
 
 // ========== 11. ANO NO RODAPÉ ==========
 $("#ano").textContent = new Date().getFullYear();
+
+// ========== 12. CÉU ESTRELADO ==========
+(() => {
+  const fundo = $(".fundo");
+  if (!fundo) return;
+  const ceu = document.createElement("div");
+  ceu.className = "estrelas";
+  ceu.setAttribute("aria-hidden", "true");
+  const cores = ["#f472b6", "#facc15", "#22d3ee", "#a78bfa", "#34d399", "#fb923c"];
+  for (let i = 0; i < 90; i++) {
+    const e = document.createElement("i");
+    const colorida = i % 4 === 0;
+    const t = colorida ? 3 + Math.random() * 3 : 1 + Math.random() * 1.4;
+    const cor = colorida ? cores[i % cores.length] : "#e2e8f0";
+    e.style.cssText = `left:${(Math.random() * 100).toFixed(1)}%;top:${(Math.random() * 100).toFixed(1)}%;` +
+      `width:${t.toFixed(1)}px;height:${t.toFixed(1)}px;background:${cor};` +
+      (colorida ? `box-shadow:0 0 ${(t * 2).toFixed(0)}px ${cor};` : "") +
+      `animation-delay:${(Math.random() * 6).toFixed(2)}s;animation-duration:${(3 + Math.random() * 4).toFixed(2)}s`;
+    ceu.appendChild(e);
+  }
+  fundo.appendChild(ceu);
+  const cadente = document.createElement("span");
+  cadente.className = "cadente";
+  fundo.appendChild(cadente);
+})();
