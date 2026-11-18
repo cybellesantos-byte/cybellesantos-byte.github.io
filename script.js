@@ -12,23 +12,9 @@ const reduzirMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").m
 const guardar = (chave, valor) => { try { localStorage.setItem(chave, valor); } catch (_) {} };
 const ler = (chave) => { try { return localStorage.getItem(chave); } catch (_) { return null; } };
 
-// ========== 1. TEMA CLARO / ESCURO ==========
-const btnTema = $("#btn-tema");
-
-function aplicarTema(tema) {
-  document.documentElement.setAttribute("data-tema", tema);
-  btnTema.textContent = tema === "escuro" ? "☀" : "☾";
-  guardar("tema", tema);
-}
-
-const temaSalvo = ler("tema");
-// O visual principal é o escuro; o visitante pode trocar e a escolha fica salva.
-aplicarTema(temaSalvo || "escuro");
-
-btnTema.addEventListener("click", () => {
-  const atual = document.documentElement.getAttribute("data-tema");
-  aplicarTema(atual === "escuro" ? "claro" : "escuro");
-});
+// ========== 1. TEMA ==========
+// O portfólio tem um único tema: o céu estrelado (escuro).
+document.documentElement.setAttribute("data-tema", "escuro");
 
 // ========== 2. MENU MOBILE ==========
 const btnMenu = $("#btn-menu");
@@ -176,4 +162,30 @@ $("#ano").textContent = new Date().getFullYear();
   const cadente = document.createElement("span");
   cadente.className = "cadente";
   fundo.appendChild(cadente);
+})();
+
+// ========== 13. ESTRELA CADENTE NO MOUSE ==========
+(() => {
+  const semMouse = !matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const reduz = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (semMouse || reduz) return;
+  const camada = document.createElement("div");
+  camada.className = "rastro";
+  camada.setAttribute("aria-hidden", "true");
+  document.body.appendChild(camada);
+  const cores = ["#f472b6", "#facc15", "#22d3ee", "#a78bfa", "#34d399", "#fb923c"];
+  let ultimo = 0, n = 0;
+  window.addEventListener("mousemove", (ev) => {
+    const agora = performance.now();
+    if (agora - ultimo < 45) return;
+    ultimo = agora;
+    const e = document.createElement("i");
+    const cor = cores[n++ % cores.length];
+    const t = 8 + Math.random() * 8;
+    e.textContent = "✦";
+    e.style.cssText = `left:${ev.clientX}px;top:${ev.clientY}px;font-size:${t.toFixed(0)}px;color:${cor};` +
+      `text-shadow:0 0 8px ${cor};--dx:${(10 + Math.random() * 22).toFixed(0)}px;--dy:${(18 + Math.random() * 26).toFixed(0)}px`;
+    camada.appendChild(e);
+    e.addEventListener("animationend", () => e.remove());
+  }, { passive: true });
 })();

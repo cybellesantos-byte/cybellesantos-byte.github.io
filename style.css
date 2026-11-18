@@ -621,3 +621,15 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .projeto-acoes { justify-content: center; margin-top: 18px; padding-top: 16px; }
 .projeto-corpo > p.nota-demo { text-align: center; }
 @media (max-width: 760px) { .lista.lista-estrelas { grid-template-columns: 1fr; } }
+
+
+/* estrelas que caem atrás do mouse, como uma estrela cadente */
+.rastro { position: fixed; inset: 0; z-index: 9999; pointer-events: none; overflow: hidden; }
+.rastro i {
+  position: absolute; font-style: normal; line-height: 1; transform: translate(-50%, -50%);
+  animation: cai-rastro 0.8s ease-out forwards;
+}
+@keyframes cai-rastro {
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.2); }
+}
