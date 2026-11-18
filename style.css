@@ -594,3 +594,30 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .estrelas i, .cadente, .cst-c, .cst-chega, .cst-ponte, .cst-onda, .cst-longe { animation: none; }
   .estrelas i { opacity: 0.6; }
 }
+
+
+/* =====================================================
+   AJUSTES: seções mais juntas, títulos com maiúscula, projetos enxutos
+   ===================================================== */
+.secao { padding-block: 44px; }
+.secao::before {
+  content: "· · ·  ✦  · · ·"; display: block; text-align: center; margin-bottom: 34px;
+  letter-spacing: 0.35em; color: var(--mudo); font-size: 0.9rem;
+}
+#contato::before { display: none; }
+.cab-secao h2 { text-transform: none; }
+
+.projetos { gap: 26px; }
+.projeto-corpo { padding: 26px 30px 28px; }
+.projeto h3 { font-size: 1.35rem; margin-bottom: 8px; }
+.projeto-corpo > p { margin-bottom: 12px; }
+.lista.lista-estrelas { margin-top: 6px; grid-template-columns: repeat(2, 1fr); gap: 9px 30px; }
+.lista.lista-estrelas li::before { content: "✦"; color: #22d3ee; }
+.lista.lista-estrelas li:nth-child(5n+1)::before { color: #facc15; }
+.lista.lista-estrelas li:nth-child(5n+2)::before { color: #34d399; }
+.lista.lista-estrelas li:nth-child(5n+3)::before { color: #f472b6; }
+.lista.lista-estrelas li:nth-child(5n+4)::before { color: #a78bfa; }
+.stack { margin-top: 18px; padding-top: 16px; }
+.projeto-acoes { justify-content: center; margin-top: 18px; padding-top: 16px; }
+.projeto-corpo > p.nota-demo { text-align: center; }
+@media (max-width: 760px) { .lista.lista-estrelas { grid-template-columns: 1fr; } }
